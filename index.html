@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,24 @@
     <link rel="icon" type="image/png" href="Couple-2-C_7zUIoT.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
 
     <style>
         /* ================= SYSTEMS & DESIGN VARIABLES ================= */
         :root {
-            --color-maroon: #3D4A34; /* Elegant Dark Olive/Sage Text Accent */
-            --color-gold: #829676;   /* Muted Sage Accent Line */
-            --color-cream: #F4F6F2;  /* Soft Light Cream/Sage Canvas */
+            --color-maroon: #3D4A34;
+            /* Elegant Dark Olive/Sage Text Accent */
+            --color-gold: #829676;
+            /* Muted Sage Accent Line */
+            --color-cream: #F4F6F2;
+            /* Soft Light Cream/Sage Canvas */
             --color-white: #FFFFFF;
-            --color-sage: #768966;   /* Main Sage Green Base from image_47a700.png */
-            --color-seal: #F7F5F0;   /* Ivory Wax Seal Base from image_47a700.png */
+            --color-sage: #768966;
+            /* Main Sage Green Base from image_47a700.png */
+            --color-seal: #F7F5F0;
+            /* Ivory Wax Seal Base from image_47a700.png */
             --font-heading: 'Great Vibes', cursive;
             --font-body: 'Cormorant Garamond', serif;
             --font-sans: 'Montserrat', sans-serif;
@@ -62,18 +70,23 @@
             position: absolute;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.8) 0%, rgba(118,137,102,0.08) 50%, transparent 100%);
+            background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.8) 0%, rgba(118, 137, 102, 0.08) 50%, transparent 100%);
             animation: slowSpin 40s linear infinite;
         }
 
         @keyframes slowSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .petal {
             position: absolute;
-            background: linear-gradient(135deg, rgba(255,255,255,0.6), var(--color-gold));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), #e66969);
             border-radius: 12% 75% 15% 75%;
             opacity: 0.4;
             pointer-events: none;
@@ -81,10 +94,23 @@
         }
 
         @keyframes floatDown {
-            0% { transform: translateY(-10%) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.5; }
-            90% { opacity: 0.5; }
-            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(-10%) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.5;
+            }
+
+            90% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* ================= FLOATING AUDIO CONTROL ================= */
@@ -99,7 +125,7 @@
             width: 55px;
             height: 55px;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -125,7 +151,8 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #5c6e4f; /* Ambient backdrop contrast shadow */
+            background-color: #5c6e4f;
+            /* Ambient backdrop contrast shadow */
             z-index: 999;
             display: flex;
             align-items: center;
@@ -151,7 +178,8 @@
         }
 
         /* Split Flap Mechanics */
-        .envelope-cover::before, .envelope-cover::after {
+        .envelope-cover::before,
+        .envelope-cover::after {
             content: '';
             position: absolute;
             left: 0;
@@ -162,8 +190,16 @@
             z-index: 1;
             transition: var(--transition-envelope);
         }
-        .envelope-cover::before { top: 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .envelope-cover::after { bottom: 0; border-top: 1px solid rgba(0,0,0,0.05); }
+
+        .envelope-cover::before {
+            top: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .envelope-cover::after {
+            bottom: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
 
         .envelope-title-area {
             z-index: 2;
@@ -178,7 +214,7 @@
             color: var(--color-white);
             font-size: 1.8rem;
             letter-spacing: 1px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .envelope-interactive-center {
@@ -205,25 +241,38 @@
             position: relative;
             border: none;
             outline: none;
-            box-shadow: 
-                inset 0 4px 6px rgba(255,255,255,0.8), 
-                inset 0 -4px 8px rgba(0,0,0,0.08), 
+            box-shadow:
+                inset 0 4px 6px rgba(255, 255, 255, 0.8),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.08),
                 0 10px 25px rgba(35, 45, 30, 0.45);
             transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             animation: gentlePulse 3s ease-in-out infinite;
         }
 
         @keyframes gentlePulse {
-            0%, 100% { transform: scale(1); box-shadow: inset 0 4px 6px rgba(255,255,255,0.8), 0 10px 25px rgba(35, 45, 30, 0.45); }
-            50% { transform: scale(1.05); box-shadow: inset 0 4px 6px rgba(255,255,255,0.8), 0 14px 35px rgba(35, 45, 30, 0.55); }
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.8), 0 10px 25px rgba(35, 45, 30, 0.45);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.8), 0 14px 35px rgba(35, 45, 30, 0.55);
+            }
         }
 
         /* Organic textured rim of the stamped wax */
         .wax-seal-btn::before {
             content: '';
             position: absolute;
-            top: -4px; left: -4px; right: -4px; bottom: -4px;
-            border-radius: 53% 48% 51% 49% / 49% 52% 48% 53%; /* Simulated irregular organic wax spill edge */
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 53% 48% 51% 49% / 49% 52% 48% 53%;
+            /* Simulated irregular organic wax spill edge */
             border: 3px solid var(--color-seal);
             opacity: 0.8;
             pointer-events: none;
@@ -235,25 +284,33 @@
             font-size: 2.8rem;
             font-weight: 400;
             transform: rotate(-5deg);
-            text-shadow: -1px -1px 1px rgba(255,255,255,0.9), 1px 1px 1px rgba(0,0,0,0.15); /* Intaglio de-emboss effect */
+            text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.9), 1px 1px 1px rgba(0, 0, 0, 0.15);
+            /* Intaglio de-emboss effect */
             user-select: none;
         }
 
         .action-hint-label {
             font-family: var(--font-sans);
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-top: 25px;
             display: block;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
             animation: textFade 2s infinite;
         }
 
         @keyframes textFade {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         /* ================= TRIGGERED STATE ANIMATIONS (OPENING ACTION) ================= */
@@ -276,7 +333,7 @@
             transform: scale(0) rotate(45deg);
             opacity: 0;
         }
-        
+
         .envelope-container.is-opened .envelope-title-area {
             opacity: 0;
             transform: translateY(-50px);
@@ -321,18 +378,41 @@
             background: linear-gradient(to bottom, #ffffff, #fafbfa);
         }
 
-        /* Ornate Corner Accents */
         .corner-ornament {
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            opacity: 0.6;
-        }
-        .top-left { top: 16px; left: 16px; }
-        .top-right { top: 16px; right: 16px; }
-        .bottom-left { bottom: 16px; left: 16px; }
-        .bottom-right { bottom: 16px; right: 16px; }
+    position: absolute;
+    width: 80px;   /* Adjust as needed */
+    height: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
 
+.corner-ornament img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* Corner Positions */
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
         .royal-crest {
             font-size: 2.2rem;
             color: var(--color-gold);
@@ -388,8 +468,15 @@
         }
 
         @keyframes dynamicFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
         }
 
         .gold-divider {
@@ -485,7 +572,7 @@
             border-radius: 6px;
             padding: 22px 10px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.01);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.01);
         }
 
         .time-num {
@@ -545,15 +632,25 @@
             text-align: center;
         }
 
-        .left { left: 0; text-align: right; }
-        .right { left: 50%; text-align: left; }
-        .right::after { left: -9px; }
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .right::after {
+            left: -9px;
+        }
 
         .timeline-content {
             background: #ffffff;
             padding: 22px;
             border-radius: 6px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.01);
             border: 1px solid rgba(130, 150, 118, 0.15);
         }
 
@@ -578,7 +675,7 @@
             border-radius: 8px;
             padding: 50px 30px;
             text-align: center;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.02);
             max-width: 600px;
             margin: 0 auto;
         }
@@ -682,8 +779,8 @@
         .lightbox-img {
             max-width: 90%;
             max-height: 82vh;
-            border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         .lightbox-close {
@@ -711,7 +808,7 @@
             border-radius: 6px;
             padding: 35px 22px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.01);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
         }
 
         .details-card h4 {
@@ -764,8 +861,15 @@
         }
 
         @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.25); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
         }
 
         /* ================= SCROLL MOTIONS REVEAL HANDLERS ================= */
@@ -782,438 +886,480 @@
 
         /* ================= TABLET & MOBILE MEDIA RESPONSIVENESS ================= */
         @media (max-width: 768px) {
-            html { font-size: 16px; }
-            
-            .countdown-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            
-            .timeline-container::after { left: 20px; }
-            .timeline-item { width: 100%; text-align: left; padding-left: 45px; padding-right: 0; }
-            .timeline-item::after { left: 13px; right: auto; }
-            .left { left: 0; }
-            
-            .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
-            .details-grid { grid-template-columns: 1fr; gap: 20px; }
-            
-            .btn-gold-action { width: 100%; max-width: none; }
-            .couple-name { font-size: 3.2rem; }
-            .card-inner-border { padding: 50px 15px; }
-            
-            .music-toggle { bottom: 20px; right: 20px; width: 48px; height: 48px; }
+            html {
+                font-size: 16px;
+            }
+
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .timeline-container::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                text-align: left;
+                padding-left: 45px;
+                padding-right: 0;
+            }
+
+            .timeline-item::after {
+                left: 13px;
+                right: auto;
+            }
+
+            .left {
+                left: 0;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .btn-gold-action {
+                width: 100%;
+                max-width: none;
+            }
+
+            .couple-name {
+                font-size: 3.2rem;
+            }
+
+            .card-inner-border {
+                padding: 50px 15px;
+            }
+
+            .music-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 48px;
+                height: 48px;
+            }
         }
 
         /***************************
         VENUE
 ****************************/
 
-.venue-section{
-    width:100%;
-    padding:90px 6%;
-    background:#F7F3EC;
-}
+        .venue-section {
+            width: 100%;
+            padding: 90px 6%;
+            background: #F7F3EC;
+        }
 
-.venue-container{
-    max-width:1350px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:80px;
-}
+        .venue-container {
+            max-width: 1350px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+        }
 
-/***************************
+        /***************************
         IMAGE
 ****************************/
 
-.venue-image{
+        .venue-image {
 
-    flex:0 0 430px;
-    height:560px;
+            flex: 0 0 430px;
+            height: 560px;
 
-    border-radius:220px 220px 18px 18px;
+            border-radius: 220px 220px 18px 18px;
 
-    overflow:hidden;
+            overflow: hidden;
 
-    position:relative;
+            position: relative;
 
-}
+        }
 
-.venue-image img{
+        .venue-image img {
 
-    width:100%;
-    height:100%;
-    object-fit:cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
 
-    transition:.6s;
+            transition: .6s;
 
-}
+        }
 
-.venue-image:hover img{
+        .venue-image:hover img {
 
-    transform:scale(1.08);
+            transform: scale(1.08);
 
-}
+        }
 
-.venue-image::after{
+        .venue-image::after {
 
-    content:"";
+            content: "";
 
-    position:absolute;
+            position: absolute;
 
-    inset:14px;
+            inset: 14px;
 
-    border:1px solid rgba(255,255,255,.8);
+            border: 1px solid rgba(255, 255, 255, .8);
 
-    border-radius:205px 205px 10px 10px;
+            border-radius: 205px 205px 10px 10px;
 
-}
+        }
 
-/***************************
+        /***************************
         CONTENT
 ****************************/
 
-.venue-content{
+        .venue-content {
 
-    flex:1;
+            flex: 1;
 
-}
+        }
 
-.subtitle{
+        .subtitle {
 
-    display:block;
+            display: block;
 
-    color:#a4885f;
+            color: #a4885f;
 
-    letter-spacing:5px;
+            letter-spacing: 5px;
 
-    font-size:13px;
+            font-size: 13px;
 
-    margin-bottom:22px;
+            margin-bottom: 22px;
 
-}
+        }
 
-.venue-content h2{
+        .venue-content h2 {
 
-    font-size:72px;
+            font-size: 72px;
 
-    font-weight:400;
+            font-weight: 400;
 
-    line-height:1.1;
+            line-height: 1.1;
 
-    color:#5E685A;
+            color: #5E685A;
 
-    margin-bottom:45px;
+            margin-bottom: 45px;
 
-}
+        }
 
-/***************************
+        /***************************
         CARD
 ****************************/
 
-.venue-card{
+        .venue-card {
 
-    background:#fff;
+            background: #fff;
 
-    border:1px solid #E7DDD1;
+            border: 1px solid #E7DDD1;
 
-    padding:45px;
+            padding: 45px;
 
-}
+        }
 
-.location{
+        .location {
 
-    display:flex;
+            display: flex;
 
-    gap:18px;
+            gap: 18px;
 
-    align-items:flex-start;
+            align-items: flex-start;
 
-}
+        }
 
-.location svg{
+        .location svg {
 
-    flex-shrink:0;
+            flex-shrink: 0;
 
-    margin-top:8px;
+            margin-top: 8px;
 
-}
+        }
 
-.location h3{
+        .location h3 {
 
-    font-size:42px;
+            font-size: 42px;
 
-    font-weight:400;
+            font-weight: 400;
 
-    color:#4e5751;
+            color: #4e5751;
 
-    line-height:1.35;
+            line-height: 1.35;
 
-}
+        }
 
-.venue-card p{
+        .venue-card p {
 
-    margin-top:22px;
+            margin-top: 22px;
 
-    letter-spacing:4px;
+            letter-spacing: 4px;
 
-    color:#9B8E7C;
+            color: #9B8E7C;
 
-    font-size:13px;
+            font-size: 13px;
 
-}
+        }
 
-.map-btn{
+        .map-btn {
 
-    display:inline-flex;
+            display: inline-flex;
 
-    align-items:center;
+            align-items: center;
 
-    gap:12px;
+            gap: 12px;
 
-    text-decoration:none;
+            text-decoration: none;
 
-    margin-top:38px;
+            margin-top: 38px;
 
-    border:1px solid #B88A52;
+            border: 1px solid #B88A52;
 
-    color:#4e5751;
+            color: #4e5751;
 
-    padding:18px 34px;
+            padding: 18px 34px;
 
-    transition:.35s;
+            transition: .35s;
 
-    letter-spacing:2px;
+            letter-spacing: 2px;
 
-    font-size:13px;
+            font-size: 13px;
 
-}
+        }
 
-.map-btn:hover{
+        .map-btn:hover {
 
-    background:#B88A52;
+            background: #B88A52;
 
-    color:#fff;
+            color: #fff;
 
-}
+        }
 
-/***************************
+        /***************************
       RESPONSIVE
 ****************************/
 
-@media(max-width:1200px){
+        @media(max-width:1200px) {
 
-.venue-container{
+            .venue-container {
 
-gap:50px;
+                gap: 50px;
 
-}
+            }
 
-.venue-image{
+            .venue-image {
 
-flex-basis:380px;
+                flex-basis: 380px;
 
-height:500px;
+                height: 500px;
 
-}
+            }
 
-.venue-content h2{
+            .venue-content h2 {
 
-font-size:58px;
+                font-size: 58px;
 
-}
+            }
 
-.location h3{
+            .location h3 {
 
-font-size:34px;
+                font-size: 34px;
 
-}
+            }
 
-}
+        }
 
-@media(max-width:991px){
+        @media(max-width:991px) {
 
-.venue-container{
+            .venue-container {
 
-flex-direction:column;
+                flex-direction: column;
 
-text-align:center;
+                text-align: center;
 
-}
+            }
 
-.venue-image{
+            .venue-image {
 
-width:420px;
+                width: 420px;
 
-max-width:100%;
+                max-width: 100%;
 
-height:540px;
+                height: 540px;
 
-flex:none;
+                flex: none;
 
-}
+            }
 
-.venue-content{
+            .venue-content {
 
-width:100%;
+                width: 100%;
 
-}
+            }
 
-.location{
+            .location {
 
-justify-content:center;
+                justify-content: center;
 
-}
+            }
 
-.venue-content h2{
+            .venue-content h2 {
 
-font-size:52px;
+                font-size: 52px;
 
-}
+            }
 
-}
+        }
 
-@media(max-width:768px){
+        @media(max-width:768px) {
 
-.venue-section{
+            .venue-section {
 
-padding:70px 25px;
+                padding: 70px 25px;
 
-}
+            }
 
-.venue-image{
+            .venue-image {
 
-width:340px;
+                width: 340px;
 
-height:450px;
+                height: 450px;
 
-}
+            }
 
-.venue-image::after{
+            .venue-image::after {
 
-inset:10px;
+                inset: 10px;
 
-}
+            }
 
-.venue-content h2{
+            .venue-content h2 {
 
-font-size:42px;
+                font-size: 42px;
 
-}
+            }
 
-.location{
+            .location {
 
-flex-direction:column;
+                flex-direction: column;
 
-align-items:center;
+                align-items: center;
 
-gap:15px;
+                gap: 15px;
 
-}
+            }
 
-.location h3{
+            .location h3 {
 
-font-size:30px;
+                font-size: 30px;
 
-}
+            }
 
-.venue-card{
+            .venue-card {
 
-padding:35px 25px;
+                padding: 35px 25px;
 
-}
+            }
 
-.map-btn{
+            .map-btn {
 
-width:100%;
+                width: 100%;
 
-justify-content:center;
+                justify-content: center;
 
-}
+            }
 
-}
+        }
 
-@media(max-width:576px){
+        @media(max-width:576px) {
 
-.venue-section{
+            .venue-section {
 
-padding:60px 18px;
+                padding: 60px 18px;
 
-}
+            }
 
-.venue-image{
+            .venue-image {
 
-width:100%;
+                width: 100%;
 
-height:420px;
+                height: 420px;
 
-border-radius:180px 180px 18px 18px;
+                border-radius: 180px 180px 18px 18px;
 
-}
+            }
 
-.venue-image::after{
+            .venue-image::after {
 
-border-radius:165px 165px 10px 10px;
+                border-radius: 165px 165px 10px 10px;
 
-}
+            }
 
-.venue-content h2{
+            .venue-content h2 {
 
-font-size:34px;
+                font-size: 34px;
 
-}
+            }
 
-.location h3{
+            .location h3 {
 
-font-size:24px;
+                font-size: 24px;
 
-}
+            }
 
-.venue-card{
+            .venue-card {
 
-padding:28px 20px;
+                padding: 28px 20px;
 
-}
+            }
 
-.map-btn{
+            .map-btn {
 
-padding:16px;
+                padding: 16px;
 
-font-size:12px;
+                font-size: 12px;
 
-}
+            }
 
-}
+        }
 
-@media(max-width:420px){
+        @media(max-width:420px) {
 
-.venue-image{
+            .venue-image {
 
-height:360px;
+                height: 360px;
 
-}
+            }
 
-.venue-content h2{
+            .venue-content h2 {
 
-font-size:28px;
+                font-size: 28px;
 
-}
+            }
 
-.location h3{
+            .location h3 {
 
-font-size:21px;
+                font-size: 21px;
 
-}
+            }
 
-.subtitle{
+            .subtitle {
 
-font-size:11px;
+                font-size: 11px;
 
-letter-spacing:3px;
+                letter-spacing: 3px;
 
-}
+            }
 
-}
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Ambient Animation Layer -->
@@ -1224,14 +1370,16 @@ letter-spacing:3px;
 
     <!-- Background Sound Controller Toggle -->
     <button class="music-toggle hidden" id="musicToggle" aria-label="Toggle Music Player">
-        <svg viewBox="0 0 24 24" class="icon-music"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        <svg viewBox="0 0 24 24" class="icon-music">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+        </svg>
     </button>
-    <audio id="bgMusic" loop src="Beautiful in White x Canon in D (Piano Cover by Riyandi Kusuma).mp3"></audio>
+    <audio id="bgMusic" loop src="AUDIO.mpeg"></audio>
 
     <!-- PREMIUM ENVELOPE OPENER LAYER (Directly references image_47a700.png setup) -->
     <div class="envelope-container" id="envelopeContainer">
         <div class="envelope-cover" id="envelopeCover">
-        
+
             <div class="envelope-interactive-center">
                 <button class="wax-seal-btn" id="waxSealBtn" aria-label="Break open invitation seal">
                     <span class="seal-emboss-initials">M&F</span>
@@ -1248,22 +1396,25 @@ letter-spacing:3px;
 
     <!-- MAIN WEBSITE CANVAS CONTEXT -->
     <main class="main-content hidden" id="mainWebsite">
-        
+
         <section class="section-hero">
             <div class="invitation-card">
-                
+
                 <!-- Corner Graphic Elements -->
                 <div class="corner-ornament top-left">
-                    <svg viewBox="0 0 100 100" fill="none" stroke="#829676" stroke-width="1.5"><path d="M0,0 Q50,0 50,50 Q0,50 0,0 Z M0,0 Q0,50 50,50 M0,20 C30,20 40,30 40,40"/></svg>
+                    <img src="TL.png" alt="Top Left Ornament">
                 </div>
+
                 <div class="corner-ornament top-right">
-                    <svg viewBox="0 0 100 100" fill="none" stroke="#829676" stroke-width="1.5"><path d="M100,0 Q50,0 50,50 Q100,50 100,0 Z M100,0 Q100,50 50,50 M100,20 C70,20 60,30 60,40"/></svg>
+                    <img src="TR.png" alt="Top Right Ornament">
                 </div>
+
                 <div class="corner-ornament bottom-left">
-                    <svg viewBox="0 0 100 100" fill="none" stroke="#829676" stroke-width="1.5"><path d="M0,100 Q50,100 50,50 Q0,50 0,100 Z M0,100 Q0,50 50,50 M0,80 C30,80 40,70 40,60"/></svg>
+                    <img src="RB.png" alt="Bottom Left Ornament">
                 </div>
+
                 <div class="corner-ornament bottom-right">
-                    <svg viewBox="0 0 100 100" fill="none" stroke="#829676" stroke-width="1.5"><path d="M100,100 Q50,100 50,50 Q100,50 100,100 Z M100,100 Q100,50 50,50 M100,80 C70,80 60,70 60,60"/></svg>
+                    <img src="LB.png" alt="Bottom Right Ornament">
                 </div>
 
                 <div class="card-inner-border">
@@ -1271,7 +1422,7 @@ letter-spacing:3px;
                     <p class="family-announcement">
                         <img src="bismillah.png" alt="" style="height: 38px;">
                     </p>
-                    
+
                     <div class="couple-profile-wrap">
                         <h2 class="couple-name">Mohammad Akther Lulu</h2>
                         <p class="parent-details">
@@ -1282,9 +1433,11 @@ letter-spacing:3px;
 
                     <div class="illustration-container float-anim">
                         <svg class="couple-illustration-svg" viewBox="0 0 100 100">
-                            <circle cx="40" cy="50" r="22" stroke="#829676" stroke-width="2" fill="none" opacity="0.6"/>
-                            <circle cx="40" cy="30" r="3.5" fill="#829676"/>
-                            <circle cx="60" cy="53" r="22" stroke="#829676" stroke-width="2" fill="none" opacity="0.6"/>
+                            <circle cx="40" cy="50" r="22" stroke="#829676" stroke-width="2" fill="none"
+                                opacity="0.6" />
+                            <circle cx="40" cy="30" r="3.5" fill="#829676" />
+                            <circle cx="60" cy="53" r="22" stroke="#829676" stroke-width="2" fill="none"
+                                opacity="0.6" />
                         </svg>
                     </div>
 
@@ -1299,12 +1452,12 @@ letter-spacing:3px;
                     <div class="gold-divider">
                         <span class="line"></span><span class="diamond">◆</span><span class="line"></span>
                     </div>
-                    
+
                     <p class="invitation-text-body">
                         Request the honor of your presence<br>
                         At their wedding ceremony
                     </p>
-                    
+
                     <div class="date-container">
                         <div class="date-side">Monday</div>
                         <div class="date-main">27</div>
@@ -1317,22 +1470,27 @@ letter-spacing:3px;
         <section class="section-countdown scroll-reveal">
             <h3 class="section-title">The Countdown</h3>
             <div class="countdown-grid" id="countdownClock">
-                <div class="countdown-card"><span class="time-num" id="days">00</span><span class="time-lbl">Days</span></div>
-                <div class="countdown-card"><span class="time-num" id="hours">00</span><span class="time-lbl">Hours</span></div>
-                <div class="countdown-card"><span class="time-num" id="minutes">00</span><span class="time-lbl">Minutes</span></div>
-                <div class="countdown-card"><span class="time-num" id="seconds">00</span><span class="time-lbl">Seconds</span></div>
+                <div class="countdown-card"><span class="time-num" id="days">00</span><span class="time-lbl">Days</span>
+                </div>
+                <div class="countdown-card"><span class="time-num" id="hours">00</span><span
+                        class="time-lbl">Hours</span></div>
+                <div class="countdown-card"><span class="time-num" id="minutes">00</span><span
+                        class="time-lbl">Minutes</span></div>
+                <div class="countdown-card"><span class="time-num" id="seconds">00</span><span
+                        class="time-lbl">Seconds</span></div>
             </div>
         </section>
 
 
-        <section class="section-gallery scroll-reveal">    
+        <section class="section-gallery scroll-reveal">
             <h3 class="section-title">Forever Begins ✨</h3>
             <div class="gallery-grid">
                 <!-- <div class="gallery-item" onclick="openLightbox('assets/images/gallery1.jpg')">
                     <img src="assets/images/gallery1.jpg" alt="Gallery Frame 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22400%22 style=%22background:%23768966;%22><text x=%2250%25%22 y=%2250%25%22 fill=%22%23FFFFFF%22 font-family=%22serif%22 text-anchor=%22middle%22>Memory One</text></svg>'">
                 </div> -->
                 <div class="gallery-item" onclick="openLightbox('assets/images/gallery2.jpg')">
-                    <img src="Couple-2-C_7zUIoT.webp" alt="Gallery Frame 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22400%22 style=%22background:%23768966;%22><text x=%2250%25%22 y=%2250%25%22 fill=%22%23FFFFFF%22 font-family=%22serif%22 text-anchor=%22middle%22>Memory Two</text></svg>'">
+                    <img src="Couple-2-C_7zUIoT.webp" alt="Gallery Frame 2"
+                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22400%22 style=%22background:%23768966;%22><text x=%2250%25%22 y=%2250%25%22 fill=%22%23FFFFFF%22 font-family=%22serif%22 text-anchor=%22middle%22>Memory Two</text></svg>'">
                 </div>
                 <!-- <div class="gallery-item" onclick="openLightbox('assets/images/gallery3.jpg')">
                     <img src="assets/images/gallery3.jpg" alt="Gallery Frame 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22400%22 style=%22background:%23768966;%22><text x=%2250%25%22 y=%2250%25%22 fill=%22%23FFFFFF%22 font-family=%22serif%22 text-anchor=%22middle%22>Memory Three</text></svg>'">
@@ -1373,44 +1531,51 @@ letter-spacing:3px;
         </section>
 
         <section class="venue-section">
-    <div class="venue-container">
+            <div class="venue-container">
 
-        <!-- Left Image -->
-        <div class="venue-image">
-            <img src="wind.jpg" alt="Wedding Venue">
-        </div>
-
-        <!-- Right Content -->
-        <div class="venue-content">
-
-            <h3 class="section-title">The Venue</h3>
-
-            <div class="venue-card">
-                <div class="venue-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <!-- Left Image -->
+                <div class="venue-image">
+                    <img src="wind.jpg" alt="Wedding Venue">
                 </div>
-                <h4 class="venue-name">Wind Valley</h4>
-                <p class="venue-address">Cherkela, Kasaragod, Kerala</p>
-                
-                <div class="action-buttons-container">
-                    <a href="https://maps.google.com/?q=Wind+Valley+Cherkela+Kasaragod" target="_blank" class="btn-gold-action">View Location</a>
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Akther+and+Fida&dates=20260727T103000Z/20260727T160000Z&details=Join+us+for+the+royal+wedding+ceremony.&location=Wind+Valley,+Cherkela,+Kasaragod" target="_blank" class="btn-gold-action">Save the Date</a>
-                    <a href="https://wa.me/918871555055?text=I%20will%20be%20delighted%20to%20attend%20the%20royal%20wedding%20of%20Akther%20and%20Fida." target="_blank" class="btn-gold-action">Contact on WhatsApp</a>
+
+                <!-- Right Content -->
+                <div class="venue-content">
+
+                    <h3 class="section-title">The Venue</h3>
+
+                    <div class="venue-card">
+                        <div class="venue-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                        </div>
+                        <h4 class="venue-name">Wind Valley</h4>
+                        <p class="venue-address">Cherkela, Kasaragod, Kerala</p>
+
+                        <div class="action-buttons-container">
+                            <a href="https://maps.google.com/?q=Wind+Valley+Cherkela+Kasaragod" target="_blank"
+                                class="btn-gold-action">View Location</a>
+                            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Akther+and+Fida&dates=20260727T103000Z/20260727T160000Z&details=Join+us+for+the+royal+wedding+ceremony.&location=Wind+Valley,+Cherkela,+Kasaragod"
+                                target="_blank" class="btn-gold-action">Save the Date</a>
+                            <a href="https://wa.me/918871555055?text=I%20will%20be%20delighted%20to%20attend%20the%20royal%20wedding%20of%20Akther%20and%20Fida."
+                                target="_blank" class="btn-gold-action">Contact on WhatsApp</a>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
+        </section>
 
-        </div>
 
-    </div>
-</section>
-
-        
 
         <section class="section-details scroll-reveal">
             <div class="details-grid">
                 <div class="details-card">
                     <h4>مَا شَاءَ ٱللَّٰهُ لَا قُوَّةَ إِلَّا بِٱللَّٰهِ</h4>
-                    <p class="highlight-text">Insha Allah, your presence and duas will make this day even more beautiful.</p>
+                    <p class="highlight-text">Insha Allah, your presence and duas will make this day even more
+                        beautiful.</p>
                     <p>We warmly welcome you and your family to celebrate with us.</p>
                 </div>
             </div>
@@ -1431,7 +1596,7 @@ letter-spacing:3px;
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
+
             const waxSealBtn = document.getElementById('waxSealBtn');
             const envelopeContainer = document.getElementById('envelopeContainer');
             const mainWebsite = document.getElementById('mainWebsite');
@@ -1446,12 +1611,12 @@ letter-spacing:3px;
                     if (envelopeContainer) {
                         envelopeContainer.classList.add('is-opened');
                     }
-                    
+
                     setTimeout(() => {
                         if (envelopeContainer) envelopeContainer.classList.add('hidden');
                         if (mainWebsite) mainWebsite.classList.remove('hidden');
                         if (musicToggle) musicToggle.classList.remove('hidden');
-                        
+
                         initializeScrollReveal();
                         playAudioEngine();
                     }, 1100); // Synced perfectly with CSS variable --transition-envelope
@@ -1472,7 +1637,7 @@ letter-spacing:3px;
                 musicToggle.addEventListener('click', () => {
                     if (!bgMusic) return;
                     if (bgMusic.paused) {
-                        bgMusic.play().catch(() => {});
+                        bgMusic.play().catch(() => { });
                         musicToggle.style.opacity = '1';
                     } else {
                         bgMusic.pause();
@@ -1492,19 +1657,19 @@ letter-spacing:3px;
             function createPetalElement() {
                 const petal = document.createElement('div');
                 petal.classList.add('petal');
-                
+
                 const randomWidth = Math.random() * 15 + 10;
                 petal.style.width = `${randomWidth}px`;
                 petal.style.height = `${randomWidth * 1.3}px`;
                 petal.style.left = `${Math.random() * 100}vw`;
-                
+
                 const delayValue = Math.random() * 8;
                 const durationValue = Math.random() * 6 + 8;
                 petal.style.animationDelay = `${delayValue}s`;
                 petal.style.animationDuration = `${durationValue}s`;
-                
+
                 petalsContainer.appendChild(petal);
-                
+
                 petal.addEventListener('animationiteration', () => {
                     petal.style.left = `${Math.random() * 100}vw`;
                 });
@@ -1516,7 +1681,7 @@ letter-spacing:3px;
 
             const updateClockRunner = () => {
                 if (!countdownClock) return;
-                
+
                 const structuralNow = new Date().getTime();
                 const frameDistance = targetEventTimestamp - structuralNow;
 
@@ -1541,7 +1706,7 @@ letter-spacing:3px;
                 if (mEl) mEl.textContent = String(calculatedMinutes).padStart(2, '0');
                 if (sEl) sEl.textContent = String(calculatedSeconds).padStart(2, '0');
             };
-            
+
             updateClockRunner();
             const clockIntervalWorker = setInterval(updateClockRunner, 1000);
 
@@ -1549,7 +1714,7 @@ letter-spacing:3px;
             function initializeScrollReveal() {
                 const targetElements = document.querySelectorAll('.scroll-reveal');
                 if (targetElements.length === 0) return;
-                
+
                 const runtimeOptions = {
                     threshold: 0.1,
                     rootMargin: "0px 0px -40px 0px"
@@ -1572,7 +1737,7 @@ letter-spacing:3px;
         function openLightbox(imagePath) {
             const lightboxModalNode = document.getElementById('lightboxModal');
             const lightboxTargetImgNode = document.getElementById('lightboxTargetImg');
-            
+
             if (lightboxModalNode && lightboxTargetImgNode) {
                 lightboxTargetImgNode.src = imagePath;
                 lightboxModalNode.style.display = 'flex';
@@ -1589,4 +1754,5 @@ letter-spacing:3px;
         }
     </script>
 </body>
+
 </html>
